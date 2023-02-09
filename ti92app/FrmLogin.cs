@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ti92app
 {
-    public partial class UserControl1 : UserControl
+    public partial class FrmLogin : Form
     {
-        public UserControl1()
+        public FrmLogin()
         {
             InitializeComponent();
         }

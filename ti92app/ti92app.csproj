@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,17 +84,25 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProdutos.resx">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -105,31 +119,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\7837_64x64.png" />
+    <None Include="Resources\Add1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Estoque.png" />
+    <None Include="Resources\Add.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user.ico" />
+    <None Include="Resources\Add2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1911_64x64.png" />
+    <None Include="Resources\Edit Alt.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\caixareg.gif.png" />
+    <None Include="Resources\Add3.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\6986_64x64.png" />
+    <None Include="Resources\Search.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arrow.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Users.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User1.ico" />
+    <None Include="Resources\Cancel.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
