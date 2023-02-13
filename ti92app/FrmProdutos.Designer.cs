@@ -37,19 +37,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.mskDesconto = new System.Windows.Forms.MaskedTextBox();
+            this.mskPreco = new System.Windows.Forms.MaskedTextBox();
+            this.cmbUnidade = new System.Windows.Forms.ComboBox();
+            this.txtCodBar = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.dtgLista = new System.Windows.Forms.DataGridView();
+            this.clnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnCodBar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnUnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLista)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,17 +70,17 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnAdicionar);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.mskDesconto);
+            this.groupBox1.Controls.Add(this.mskPreco);
+            this.groupBox1.Controls.Add(this.cmbUnidade);
+            this.groupBox1.Controls.Add(this.txtCodBar);
+            this.groupBox1.Controls.Add(this.txtDescricao);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 28);
             this.groupBox1.Name = "groupBox1";
@@ -151,126 +160,211 @@
             this.checkBox1.Text = "DESCONTINUADO";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox2
+            // mskDesconto
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(450, 92);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(121, 20);
-            this.maskedTextBox2.TabIndex = 4;
+            this.mskDesconto.Location = new System.Drawing.Point(450, 92);
+            this.mskDesconto.Name = "mskDesconto";
+            this.mskDesconto.Size = new System.Drawing.Size(121, 20);
+            this.mskDesconto.TabIndex = 4;
             // 
-            // maskedTextBox1
+            // mskPreco
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(311, 92);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(121, 20);
-            this.maskedTextBox1.TabIndex = 3;
+            this.mskPreco.Location = new System.Drawing.Point(311, 92);
+            this.mskPreco.Name = "mskPreco";
+            this.mskPreco.Size = new System.Drawing.Size(121, 20);
+            this.mskPreco.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbUnidade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cmbUnidade.FormattingEnabled = true;
+            this.cmbUnidade.Location = new System.Drawing.Point(23, 92);
+            this.cmbUnidade.Name = "cmbUnidade";
+            this.cmbUnidade.Size = new System.Drawing.Size(121, 21);
+            this.cmbUnidade.TabIndex = 1;
             // 
-            // textBox3
+            // txtCodBar
             // 
-            this.textBox3.Location = new System.Drawing.Point(169, 92);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtCodBar.Location = new System.Drawing.Point(169, 92);
+            this.txtCodBar.Name = "txtCodBar";
+            this.txtCodBar.Size = new System.Drawing.Size(121, 20);
+            this.txtCodBar.TabIndex = 2;
             // 
-            // textBox2
+            // txtDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 20);
-            this.textBox2.TabIndex = 0;
+            this.txtDescricao.Location = new System.Drawing.Point(148, 41);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(317, 20);
+            this.txtDescricao.TabIndex = 0;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(23, 41);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 5;
+            this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // dtgLista
+            // 
+            this.dtgLista.AllowUserToAddRows = false;
+            this.dtgLista.AllowUserToDeleteRows = false;
+            this.dtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnId,
+            this.clnCodBar,
+            this.clnDescricao,
+            this.clnUnd,
+            this.clnPreco,
+            this.clnDesconto,
+            this.clnAtivo});
+            this.dtgLista.Location = new System.Drawing.Point(22, 290);
+            this.dtgLista.Name = "dtgLista";
+            this.dtgLista.ReadOnly = true;
+            this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgLista.Size = new System.Drawing.Size(645, 177);
+            this.dtgLista.TabIndex = 1;
+            this.dtgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // clnId
+            // 
+            this.clnId.Frozen = true;
+            this.clnId.HeaderText = "ID";
+            this.clnId.Name = "clnId";
+            this.clnId.ReadOnly = true;
+            // 
+            // clnCodBar
+            // 
+            this.clnCodBar.Frozen = true;
+            this.clnCodBar.HeaderText = "CODBAR";
+            this.clnCodBar.Name = "clnCodBar";
+            this.clnCodBar.ReadOnly = true;
+            // 
+            // clnDescricao
+            // 
+            this.clnDescricao.Frozen = true;
+            this.clnDescricao.HeaderText = "DESCRICAO";
+            this.clnDescricao.Name = "clnDescricao";
+            this.clnDescricao.ReadOnly = true;
+            // 
+            // clnUnd
+            // 
+            this.clnUnd.Frozen = true;
+            this.clnUnd.HeaderText = "UND";
+            this.clnUnd.Name = "clnUnd";
+            this.clnUnd.ReadOnly = true;
+            // 
+            // clnPreco
+            // 
+            this.clnPreco.Frozen = true;
+            this.clnPreco.HeaderText = "PREÇO";
+            this.clnPreco.Name = "clnPreco";
+            this.clnPreco.ReadOnly = true;
+            // 
+            // clnDesconto
+            // 
+            this.clnDesconto.Frozen = true;
+            this.clnDesconto.HeaderText = "DESCONTO";
+            this.clnDesconto.Name = "clnDesconto";
+            this.clnDesconto.ReadOnly = true;
+            // 
+            // clnAtivo
+            // 
+            this.clnAtivo.Frozen = true;
+            this.clnAtivo.HeaderText = "ATIVO";
+            this.clnAtivo.Name = "clnAtivo";
+            this.clnAtivo.ReadOnly = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 41);
+            this.textBox1.Location = new System.Drawing.Point(77, 264);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.Size = new System.Drawing.Size(590, 20);
+            this.textBox1.TabIndex = 2;
             // 
-            // dataGridView1
+            // label7
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 261);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 177);
-            this.dataGridView1.TabIndex = 1;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 267);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "BUSCAR";
             // 
-            // button4
+            // btnCancelar
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::ti92app.Properties.Resources.Cancel;
-            this.button4.Location = new System.Drawing.Point(488, 143);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 52);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "CANCELAR";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::ti92app.Properties.Resources.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(488, 143);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(133, 52);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnConsultar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::ti92app.Properties.Resources.Search;
-            this.button3.Location = new System.Drawing.Point(333, 143);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 52);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "CONSULTAR";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Image = global::ti92app.Properties.Resources.Search;
+            this.btnConsultar.Location = new System.Drawing.Point(333, 143);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(133, 52);
+            this.btnConsultar.TabIndex = 9;
+            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::ti92app.Properties.Resources.Edit_Alt;
-            this.button2.Location = new System.Drawing.Point(178, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 52);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "EDITAR";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = global::ti92app.Properties.Resources.Edit_Alt;
+            this.btnEditar.Location = new System.Drawing.Point(172, 143);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(133, 52);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAdicionar
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(23, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 52);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "ADICIONAR";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnAdicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.Image = global::ti92app.Properties.Resources.Add;
+            this.btnAdicionar.Location = new System.Drawing.Point(23, 143);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(133, 52);
+            this.btnAdicionar.TabIndex = 7;
+            this.btnAdicionar.Text = "ADICIONAR";
+            this.btnAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(700, 482);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtgLista);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProdutos";
             this.Text = "PRODUTO";
+            this.Load += new System.EventHandler(this.FrmProdutos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLista)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -283,17 +377,26 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.MaskedTextBox mskDesconto;
+        private System.Windows.Forms.MaskedTextBox mskPreco;
+        private System.Windows.Forms.ComboBox cmbUnidade;
+        private System.Windows.Forms.TextBox txtCodBar;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.DataGridView dtgLista;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnCodBar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnUnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnDesconto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clnAtivo;
     }
 }
