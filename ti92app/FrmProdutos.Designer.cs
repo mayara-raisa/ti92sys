@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkDescontinuado = new System.Windows.Forms.CheckBox();
             this.mskDesconto = new System.Windows.Forms.MaskedTextBox();
             this.mskPreco = new System.Windows.Forms.MaskedTextBox();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
@@ -74,7 +74,7 @@
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnAdicionar);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkDescontinuado);
             this.groupBox1.Controls.Add(this.mskDesconto);
             this.groupBox1.Controls.Add(this.mskPreco);
             this.groupBox1.Controls.Add(this.cmbUnidade);
@@ -84,7 +84,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(645, 227);
+            this.groupBox1.Size = new System.Drawing.Size(746, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUTO";
@@ -149,16 +149,16 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "ID";
             // 
-            // checkBox1
+            // chkDescontinuado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(478, 41);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "DESCONTINUADO";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkDescontinuado.AutoSize = true;
+            this.chkDescontinuado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDescontinuado.Location = new System.Drawing.Point(478, 41);
+            this.chkDescontinuado.Name = "chkDescontinuado";
+            this.chkDescontinuado.Size = new System.Drawing.Size(133, 17);
+            this.chkDescontinuado.TabIndex = 6;
+            this.chkDescontinuado.Text = "DESCONTINUADO";
+            this.chkDescontinuado.UseVisualStyleBackColor = true;
             // 
             // mskDesconto
             // 
@@ -195,7 +195,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(317, 20);
             this.txtDescricao.TabIndex = 0;
-            this.txtDescricao.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+  
             // 
             // txtId
             // 
@@ -203,7 +203,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 5;
-            this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // dtgLista
             // 
@@ -222,9 +222,9 @@
             this.dtgLista.Name = "dtgLista";
             this.dtgLista.ReadOnly = true;
             this.dtgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgLista.Size = new System.Drawing.Size(645, 177);
+            this.dtgLista.Size = new System.Drawing.Size(748, 177);
             this.dtgLista.TabIndex = 1;
-            this.dtgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLista_CellDoubleClick);
             // 
             // clnId
             // 
@@ -329,6 +329,7 @@
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAdicionar
             // 
@@ -351,7 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 482);
+            this.ClientSize = new System.Drawing.Size(939, 482);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtgLista);
@@ -381,7 +382,7 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkDescontinuado;
         private System.Windows.Forms.MaskedTextBox mskDesconto;
         private System.Windows.Forms.MaskedTextBox mskPreco;
         private System.Windows.Forms.ComboBox cmbUnidade;

@@ -103,7 +103,7 @@
             this.btnRecSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecSenha.Location = new System.Drawing.Point(155, 164);
             this.btnRecSenha.Name = "btnRecSenha";
-            this.btnRecSenha.Size = new System.Drawing.Size(131, 27);
+            this.btnRecSenha.Size = new System.Drawing.Size(102, 40);
             this.btnRecSenha.TabIndex = 7;
             this.btnRecSenha.Text = "RECUPERAR SENHA";
             this.btnRecSenha.UseVisualStyleBackColor = true;
@@ -130,11 +130,13 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(74, 164);
+            this.btnLogin.Image = global::ti92app.Properties.Resources.Play;
+            this.btnLogin.Location = new System.Drawing.Point(31, 164);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 27);
+            this.btnLogin.Size = new System.Drawing.Size(102, 40);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOGIN";
+            this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // FrmLogin

@@ -154,5 +154,41 @@
   <ItemGroup>
     <None Include="Resources\Rectangle Green.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estoque1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estoque2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Alt1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6986_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1911_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixareg.gif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinPedido.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

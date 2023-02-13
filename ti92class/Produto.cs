@@ -9,23 +9,23 @@ namespace ti92class
 {
     public class Produto
     {
+       
 
+        public int Id { get; set;}
+        public string Descricao { get; set;}
+        public string Unidade { get; set;}
+        public string CodBar { get; set;}
+        public double Preco { get; set;}
+        public double Desconto { get; set;}
+        public bool Descontinuado { get; set;}
 
-        public int Id { get; set; }
-        public string Descricao { get; set; }
-        public string Unidade { get; set; }
-        public string CodBar { get; set; }
-        public double Preco { get; set; }
-        public double Desconto { get; set; }
-        public bool Descontinuado { get; set; }
-
-
+        
         // Métodos contrutores
         public Produto()
         {
         }
-        public Produto(int id, string descricao, string unidade, string codBar, double preco, double desconto,
-            bool descontinuado = false)
+        public Produto(int id, string descricao, string unidade, string codBar, double preco, double desconto, 
+            bool descontinuado=false)
         {
             Id = id;
             Descricao = descricao;
@@ -36,8 +36,8 @@ namespace ti92class
             Descontinuado = descontinuado;
         }
 
-        public Produto(string descricao, string unidade, string codBar, double preco, double desconto,
-            bool descontinuado = false)
+        public Produto(string descricao, string unidade, string codBar, double preco, double desconto, 
+            bool descontinuado=false)
         {
             Descricao = descricao;
             Unidade = unidade;
@@ -61,7 +61,7 @@ namespace ti92class
         }
         public static List<Produto> Listar()
         {
-
+           
             List<Produto> lista = new List<Produto>();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
@@ -108,7 +108,9 @@ namespace ti92class
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update produtos set descricao = '" + Descricao + "', unidade = '" + Unidade + "', codbar = '" + CodBar + "', preco = '" + Preco + "', desconto ='" + Desconto + "', descontinuado = '" + Descontinuado + "' where id = " + Id;
+            cmd.CommandText = "update produtos set descricao = '" + Descricao + "', unidade = '" + Unidade + 
+                "', codbar = '" + CodBar + "', preco = '" + Preco + "', desconto ='" + Desconto +
+                "', descontinuado = '" + Descontinuado + "' where id = " + Id;
             cmd.ExecuteNonQuery();
         }
         public bool Arquivar(int _id) // arquivando
