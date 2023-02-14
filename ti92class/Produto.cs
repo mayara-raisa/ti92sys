@@ -53,7 +53,8 @@ namespace ti92class
             // Gravar um novo produto na tabela niveis
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert produtos (descricao, unidade, codbar, preco, desconto, descontinuado) values ('" + Descricao + "','" + Unidade + "','" + CodBar + "'," + Preco + "," + Desconto + ",0)";
+            cmd.CommandText = "insert produtos (descricao, unidade, codbar, preco, desconto, descontinuado) " +
+            "values ('" + Descricao + "','" + Unidade + "','" + CodBar + "'," + Preco + "," + Desconto + ",0)";
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
