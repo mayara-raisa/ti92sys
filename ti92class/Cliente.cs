@@ -73,10 +73,9 @@ namespace ti92class
                 dr.GetString(3),
                 dr.GetDateTime(4),
                 dr.GetBoolean(5),
-                dr.GetString(6),
-                dr.GetInt32(7)
-
-                )
+                Endereco.ListarPorEndereco(dr.GetInt32(6)),
+                
+               )
               );
             }
             return lista;
