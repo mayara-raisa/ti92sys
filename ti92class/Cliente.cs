@@ -10,17 +10,17 @@ namespace ti92class
 {
     public class Cliente
     {
-
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Cpf { get; set; }
         public string Email { get; set; }
         public DateTime Data { get; set; }
         public bool Ativo { get; set; }
-
+        public List<Endereco> Enderecos { get; set; }
+        public List<Telefone> Telefones { get; set; }
+ 
         public Cliente() { }
-
-        public Cliente(int id, string nome, int cpf, string email, DateTime data, bool ativo)
+        public Cliente(int id, string nome, int cpf, string email, DateTime data, bool ativo,List<Endereco>enderecos,List<Telefone> telefones)
         {
             Id = id;
             Nome = nome;
@@ -28,8 +28,9 @@ namespace ti92class
             Email = email;
             Data = data;
             Ativo = ativo;
+            Enderecos = enderecos;
+            Telefones = telefones;
         }
-
         public Cliente(string nome, int cpf, string email, DateTime data, bool ativo)
         {
             Nome = nome;
@@ -38,14 +39,23 @@ namespace ti92class
             Data = data;
             Ativo = ativo;
         }
+        public Cliente(int id)
+        { 
+            Telefones = Telefone.ListarPorTelefone(id);
+            Enderecos = Endereco.ListarPorEndereco(id);
+        }
         private void Inserir()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "insert cliente(nome,cpf,email,datacad,ativo) " 
-            + " value ('"+Nome+"',"+Cpf+",'"+Email+"',"+Data+","+Ativo+")";
+            cmd.CommandText = "insert cliente (nome,cpf,email,datacad,ativo) " + 
+            " value ('" + Nome + "'," + Cpf + ",'" + Email + "'," + Data + "," + Ativo +")";
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select @@identity";
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            Id = Convert.ToInt32(cmd.ExecuteScalar()); 
+            foreach (var telefone in Telefones)
+            {
+                telefone.Inserir(Id);
+            }
         }
         public static List<Cliente> Listar()
         {
@@ -59,14 +69,17 @@ namespace ti92class
                 lista.Add(new Cliente(
                 dr.GetInt32(0),
                 dr.GetString(1),
-                dr.GetInt32(2),
+                dr.GetString(2),
                 dr.GetString(3),
-                dr.GetInt32(4),
-                dr.GetBoolean(5)
-                
+                dr.GetDateTime(4),
+                dr.GetBoolean(5),
+                dr.GetString(6),
+                dr.GetInt32(7)
+
                 )
               );
             }
+            return lista;
         }
 
     }
