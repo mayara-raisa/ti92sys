@@ -84,7 +84,7 @@ namespace ti92class
         {
            Endereco endereco = new Endereco();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select * from endercos where id = " + _id;
+            cmd.CommandText = "select * from enderecos where id = " + _id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
