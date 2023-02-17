@@ -58,20 +58,27 @@ namespace ti92class
         }
         public static List<Endereco> ListarPorEndereco(int cliente_id)
         {
-            List<Endereco> listaTel = new List<Endereco>();
+            List<Endereco> lista = new List<Endereco>();
             var cmd = Banco.Abrir();
             cmd.CommandText = "select id, numero, tipo from Endereco where cliente_id = " + cliente_id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                listaTel.Add(new Endereco(
-                        dr.GetInt32(2),
-                        dr.GetString(0),
-                        dr.GetString(1)
+                lista.Add(new Endereco(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        dr.GetString(7),
+                        dr.GetString(8),
+                        dr.GetString(9)
                     )
-                    );
+                    ) ;
             }
-            return listaTel;
+            return lista;
         }
         public static Endereco ObterPorId(int _id)
         {
@@ -81,9 +88,20 @@ namespace ti92class
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-             
+                endereco.Id = dr.GetInt32(0);
+                endereco.Cep = dr.GetString(1);
+                endereco.Logradouro =dr.GetString(2);
+                endereco.Numero = dr.GetString(3);
+                endereco.Complemento = dr.GetString(4);
+                endereco.Bairro = dr.GetString(5);
+                endereco.Cidade = dr.GetString(6);
+                endereco.Estado = dr.GetString(7);
+                endereco.Uf = dr.GetString(8);
+                endereco.Tipo = dr.GetString(9);
             }
+            return endereco;
         }
+
 
     }
 }
