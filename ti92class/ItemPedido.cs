@@ -32,7 +32,7 @@ namespace ti92class
             Quantidade = quantidade;
             Desconto = desconto;
         }
-        public static List<ItemPedido> listar(int pedido_id)
+        public static List<ItemPedido> Listar(int pedido_id)
         {
             List<ItemPedido> itens = new List<ItemPedido>();
             var cmd = Banco.Abrir();
