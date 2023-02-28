@@ -36,7 +36,7 @@ namespace ti92class
         {
             List<Telefone> listaTel = new List<Telefone>();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select id, numero, tipo from telefone where cliente_id = "+cliente_id;
+            cmd.CommandText = "select id, numero, tipo from telefones where cliente_id = "+cliente_id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

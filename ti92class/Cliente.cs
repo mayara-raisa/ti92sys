@@ -43,7 +43,7 @@ namespace ti92class
         public Cliente(int id)
         {
             Telefones = Telefone.ListarPorTelefone(id);
-            Enderecos = Endereco.ListarPorEndereco(id);
+            Enderecos = Endereco.ListarPorCliente(id);
         }
         private void Inserir()
         {
@@ -63,7 +63,7 @@ namespace ti92class
             List<Cliente> lista = new List<Cliente>();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from clientes orde by descricao asc";
+            cmd.CommandText = "select * from clientes order by nome asc";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -74,8 +74,8 @@ namespace ti92class
                 dr.GetString(3),
                 dr.GetDateTime(4),
                 dr.GetBoolean(5),
-                Endereco.ListarPorEndereco(dr.GetInt32(6)),
-                Telefone.ListarPorTelefone(dr.GetInt32(7))
+                Endereco.ListarPorCliente(dr.GetInt32(0)),
+                Telefone.ListarPorTelefone(dr.GetInt32(0))
                )
               );
             }
@@ -86,7 +86,7 @@ namespace ti92class
             Cliente cliente = new Cliente();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * cliente where id = " + _id;
+            cmd.CommandText = "select * from clientes where id = " + _id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -96,7 +96,7 @@ namespace ti92class
                 cliente.Email = dr.GetString(3);
                 cliente.Data = dr.GetDateTime(4);
                 cliente.Ativo = dr.GetBoolean(5);
-                cliente.Enderecos = Endereco.ListarPorEndereco(dr.GetInt32(0));
+                cliente.Enderecos = Endereco.ListarPorCliente(dr.GetInt32(0));
                 cliente.Telefones = Telefone.ListarPorTelefone(dr.GetInt32(0));
             }
             return cliente;
@@ -133,7 +133,7 @@ namespace ti92class
                 dr.GetString(3),
                 dr.GetDateTime(4),
                 dr.GetBoolean(5),
-                Endereco.ListarPorEndereco(dr.GetInt32(6)),
+                Endereco.ListarPorCliente(dr.GetInt32(6)),
                 Telefone.ListarPorTelefone(dr.GetInt32(7))
                     )
                  );

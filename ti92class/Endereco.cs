@@ -56,11 +56,11 @@ namespace ti92class
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
-        public static List<Endereco> ListarPorEndereco(int cliente_id)
+        public static List<Endereco> ListarPorCliente(int cliente_id)
         {
             List<Endereco> lista = new List<Endereco>();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select id, numero, tipo from Endereco where cliente_id = " + cliente_id;
+            cmd.CommandText = "select id, numero, tipo from enderecos where cliente_id = " + cliente_id;
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
