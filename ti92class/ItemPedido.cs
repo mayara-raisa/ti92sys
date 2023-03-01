@@ -24,6 +24,14 @@ namespace ti92class
             Quantidade = quantidade;
             Desconto = desconto;
         }
+        public ItemPedido(int id, Produto produto, double quantidade, double desconto)
+        {
+            Id = id;
+            Produto = produto;
+            Preco = Produto.Preco;
+            Quantidade = quantidade;
+            Desconto = desconto;
+        }
         public ItemPedido(int id, Produto produto, double preco, double quantidade, double desconto)
         {
             Id = id;
@@ -66,14 +74,14 @@ namespace ti92class
             }
             return iten;
         }
-        public void Adicionar(int pedido_id)
+        public void Adicionar()
         {
             var cmd = Banco.Abrir();
             cmd.CommandText = "insert itempedido (pedido_id, produto_id, preco, quantidade, desconto)" +
                 " values (@pedido_id, @produto_id, @preco, @quantidade, @desconto)";
             cmd.Parameters.Clear();
-            cmd.Parameters.Add("@pedido_id", MySqlDbType.Int32).Value = pedido_id;
-            cmd.Parameters.Add("@pruduto_id", MySqlDbType.VarChar).Value = Produto.Id;
+            cmd.Parameters.Add("@pedido_id", MySqlDbType.Int32).Value = Id;
+            cmd.Parameters.Add("@produto_id", MySqlDbType.VarChar).Value = Produto.Id;
             cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = Produto.Preco;
             cmd.Parameters.Add("@quantidade", MySqlDbType.Decimal).Value = Quantidade;
             cmd.Parameters.Add("@desconto", MySqlDbType.Decimal).Value = Desconto;

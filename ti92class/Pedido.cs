@@ -56,7 +56,7 @@ namespace ti92class
             cmd.Parameters.Add("@client", MySqlDbType.Int32).Value = Cliente.Id;
             cmd.Parameters.Add("@user", MySqlDbType.Int32).Value = Usuario.Id;
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "@@select identity";
+            cmd.CommandText = "select @@identity";
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             Random rand = new Random();
             string hash = "P" +Id+ rand.Next(10001, 99999);
